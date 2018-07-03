@@ -37,8 +37,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChainOfResponsibility_Tests.cs" />
-    <Compile Include="Strategy_Tests.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility_Tests.cs" />
+    <Compile Include="Structural\Decorator_Tests.cs" />
+    <Compile Include="Behavioral\Strategy_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +53,9 @@
       <Project>{d24cf61f-8b0f-430e-8b2b-54b44156e6a2}</Project>
       <Name>DesignPatterns</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Creational\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
