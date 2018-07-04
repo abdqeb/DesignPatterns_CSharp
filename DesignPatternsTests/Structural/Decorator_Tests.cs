@@ -12,7 +12,7 @@ namespace DesignPatternsTests
             //The innner most pizza must be PlainPizza
             IPizza pizzaOrder = new MozzarellaTopping(new MozzarellaTopping(new ChickenTopping(new SauceTopping(new PlainPizza()))));
 
-            Assert.Equals(pizzaOrder.GetPrice(), 13);
+            Assert.AreEqual(pizzaOrder.GetPrice(), 13);
         }
     }
 }

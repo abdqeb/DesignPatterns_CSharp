@@ -1,8 +1,8 @@
 ﻿namespace DesignPatterns.ChainOfResponsibility
 {
-    public interface InstallerChain
+    public interface IInstallerChain
     {
-        void SetNextStep(InstallerChain nextChain);
+        void SetNextStep(IInstallerChain nextChain);
         void PerformStep(InstallerConfig config);
     }
 }

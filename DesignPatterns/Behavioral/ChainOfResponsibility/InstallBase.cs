@@ -1,12 +1,12 @@
 ﻿namespace DesignPatterns.ChainOfResponsibility
 {
-    public abstract class InstallBase : InstallerChain
+    public abstract class InstallBase : IInstallerChain
     {
-        protected InstallerChain _nextChain;
+        protected IInstallerChain _nextChain;
 
         public abstract void PerformStep(InstallerConfig config);
 
-        public void SetNextStep(InstallerChain nextChain)
+        public void SetNextStep(IInstallerChain nextChain)
         {
             _nextChain = nextChain;
         }

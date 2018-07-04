@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.ChainOfResponsibility
 {
-    public class InstallToolbar : InstallBase, InstallerChain
+    public class InstallToolbar : InstallBase, IInstallerChain
     {
         public override void PerformStep(InstallerConfig config)
         {

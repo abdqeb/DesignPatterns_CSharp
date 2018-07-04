@@ -1,8 +1,8 @@
 ﻿namespace DesignPatterns.ChainOfResponsibility
 {
-    public class WhyInterface : InstallerChain
+    public class WhyInterface : IInstallerChain
     {
-        protected InstallerChain _nextChain;
+        protected IInstallerChain _nextChain;
 
         public void PerformStep(InstallerConfig config)
         {
@@ -13,7 +13,7 @@
         }
 
         //Note this is duplicated with isntall base, but sometimes we dont have a choice
-        public void SetNextStep(InstallerChain nextChain)
+        public void SetNextStep(IInstallerChain nextChain)
         {
             _nextChain = nextChain;
         }

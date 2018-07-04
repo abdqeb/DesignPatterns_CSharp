@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.Structural.Decorator
 {
-    public class SauceTopping : PizzaToppingDecorator
+    public class SauceTopping : PizzaToppingDecorator, IPizza
     {
         public SauceTopping(IPizza newPizza) : base(newPizza)
         {

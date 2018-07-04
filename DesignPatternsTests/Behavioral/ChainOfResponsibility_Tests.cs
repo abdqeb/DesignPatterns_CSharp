@@ -10,9 +10,9 @@ namespace DesignPatternsTests
         [Test]
         public void Using_ChainOfResponsibility_CoreThenWhy()
         {
-            InstallerChain core = new InstallCoreSoftware();
-            InstallerChain toolbar = new InstallToolbar();
-            InstallerChain whyinterface = new WhyInterface();
+            IInstallerChain core = new InstallCoreSoftware();
+            IInstallerChain toolbar = new InstallToolbar();
+            IInstallerChain whyinterface = new WhyInterface();
 
             core.SetNextStep(whyinterface);
             whyinterface.SetNextStep(toolbar);
@@ -31,9 +31,9 @@ namespace DesignPatternsTests
         [Test]
         public void Using_ChainOfResponsibility_CoreThenTool()
         {
-            InstallerChain core = new InstallCoreSoftware();
-            InstallerChain toolbar = new InstallToolbar();
-            InstallerChain whyinterface = new WhyInterface();
+            IInstallerChain core = new InstallCoreSoftware();
+            IInstallerChain toolbar = new InstallToolbar();
+            IInstallerChain whyinterface = new WhyInterface();
 
             core.SetNextStep(toolbar);
             toolbar.SetNextStep(whyinterface);

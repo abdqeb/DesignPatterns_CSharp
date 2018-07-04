@@ -1,14 +1,10 @@
 ﻿namespace DesignPatterns.Structural.Decorator
 {
-    public class A { public virtual string f() { return "A"; } }
-    //public class B : A { f(){ super.f(); print(“B”); } }
-    public class B : A { public override string f() { return base.f() + "B"; } }
-    //public class C : A { f(){ super.f(); print(“C”); } }
-    public class C : A { public override string f() { return base.f() + "C"; } }
-    //public class BC : A { f(){ super.f(); print(“B”); print(“C”); } }
-    public class BC : A { public override string f() { return base.f() + "BC"; } }
-    //public class CB : A { f(){ super.f(); print(“C”); print(“B”); } }
-    public class CB : A { public override string f() { return base.f() + "CB"; } }
+    public class A { public virtual string Text() { return "A"; } } //A
+    public class B : A { public override string Text() { return base.Text() + "B"; } } //AB
+    public class C : A { public override string Text() { return base.Text() + "C"; } } //AC
+    public class BC : A { public override string Text() { return base.Text() + "BC"; } } //ABC
+    public class CB : A { public override string Text() { return base.Text() + "CB"; } } //ACB
 
     //Rewrite the below into Decorator Pattern
     //A a; 
