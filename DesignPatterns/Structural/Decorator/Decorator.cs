@@ -1,25 +1,31 @@
 ﻿namespace DesignPatterns.Structural.Decorator
 {
-    public class A { public virtual string Text() { return "A"; } } //A
-    public class B : A { public override string Text() { return base.Text() + "B"; } } //AB
-    public class C : A { public override string Text() { return base.Text() + "C"; } } //AC
-    public class BC : A { public override string Text() { return base.Text() + "BC"; } } //ABC
-    public class CB : A { public override string Text() { return base.Text() + "CB"; } } //ACB
-
-    //Rewrite the below into Decorator Pattern
-    //A a; 
-    //switch (n) 
-    //{ 
-    //	case 1: a = new A(); 
-    //	case 2: a = new B(); 
-    //	case 3: a = new C(); 
-    //	case 4: a = new BC(); 
-    //	case 5: a = new CB(); 
-    //} 
-    //a.f();
-
-    public class Decorator
+    public interface IText
     {
-
+        string Text();
+    }
+    //Base Class
+    public class A : IText
+    {
+        public A() { }
+        public virtual string Text() { return "A"; }
+    }
+    public abstract class ADecorator : IText
+    {
+        protected IText _text;
+        public ADecorator(IText newText) { _text = newText; }
+        public abstract string Text();
+    }
+    // B Decoration
+    public class B : ADecorator, IText
+    {
+        public B(IText newText) : base(newText) {}
+        public override string Text() { return _text.Text() + "B"; }
+    } 
+    // C Decoration
+    public class C : ADecorator, IText
+    {
+        public C(IText newText) : base(newText) { }
+        public override string Text() { return _text.Text() + "C"; }
     }
 }
